@@ -12,6 +12,7 @@ class App extends Component {
       videoList: []
     }
   }
+  //handels JSON data from API and sending to the Redux's store
   submit() {
     this.props.clear_store([]);
     const {videoName} = this.state;
@@ -42,6 +43,7 @@ class App extends Component {
               <Button onClick={() => this.submit()}>Submit</Button>
             </FormGroup>
           </Form>
+          {/*iteration thru each element in component's props and rendering it out*/}
           {this.props.state.map((item,index) => {
             return (
               <div key={index} className='item'>
@@ -54,7 +56,6 @@ class App extends Component {
               </div>
             )
           })} 
-          
         </div>
       
     );
